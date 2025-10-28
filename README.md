@@ -17,7 +17,7 @@ The analysis blends **economic intuition** with **statistical modeling**, illust
 Nominal gasoline prices fluctuate heavily due to factors such as crude oil supply, geopolitical events, refining capacity, and seasonal demand.  
 However, to assess true changes in purchasing power and real cost, these nominal prices must be **adjusted for inflation** using the CPI, yielding the **real price of gasoline**.
 
-The central question is whether historical patterns in real gasoline prices contain enough structure to make accurate forecasts — or if price changes are largely random, reflecting efficient market behavior.
+The central question is whether historical patterns in real gasoline prices contain enough structure to make accurate forecasts, or if price changes are largely random, reflecting efficient market behavior.
 
 ---
 
@@ -28,23 +28,23 @@ The study unfolds through several major steps:
 1. **Data Preparation and Inflation Adjustment**  
    - Imported the nominal gasoline price and CPI series.  
    - Converted nominal prices to **real terms**:  
-     \[
+     $
      \text{Real Price}_t = \frac{\text{Nominal Price}_t}{\text{CPI}_t} \times 100
-     \]
+     $
    - Ensured proper data types, handled decimal separators, and created time-based indexing.
 
 2. **Exploratory Visualization**  
    - Compared nominal vs. real gasoline prices over time.  
-   - Observed how inflation smoothing reveals true price dynamics — with real prices showing long-term mean reversion and shorter cyclical spikes.
+   - Observed how inflation smoothing reveals true price dynamics, with real prices showing long-term mean reversion and shorter cyclical spikes.
 
 3. **Logarithmic Transformation and Stationarity Analysis**  
-   - Transformed real prices into logs: \( y_t = \log(P_t^{real}) \), to stabilize variance.  
-   - Examined the **autocorrelation functions (ACFs)** of \( y_t \) and its first difference \( \Delta y_t \).  
+   - Transformed real prices into logs: $ y_t = \log(P_t^{real}) $, to stabilize variance.  
+   - Examined the **autocorrelation functions (ACFs)** of $ y_t $ and its first difference $ \Delta y_t $.  
    - Found strong persistence in levels and weak correlation in differences — evidence that the series is **integrated of order one (I(1))**.
 
 4. **AR(1) Model Estimation**  
-   - Fitted **AR(1)** models for both \( y_t \) and \( \Delta y_t \).  
-   - The coefficient \( \phi \approx 0.98 \) for \( y_t \) confirmed near-unit-root behavior, while \( \phi \approx 0.45 \) for \( \Delta y_t \) showed short-term stationarity.  
+   - Fitted **AR(1)** models for both $ y_t $ and $ \Delta y_t $.  
+   - The coefficient $ \phi \approx 0.98 $ for $ y_t $ confirmed near-unit-root behavior, while $ \phi \approx 0.45 $ for $ \Delta y_t $ showed short-term stationarity.  
    - Residual diagnostics confirmed well-behaved, mean-zero errors.
 
 5. **Forecasting Models**  
@@ -63,7 +63,7 @@ The study unfolds through several major steps:
 
 7. **Statistical Tests of Predictive Superiority**  
    - Applied **Theil’s U** statistic and the **Diebold–Mariano test** to formally compare models.  
-   - All ARIMA models achieved Theil’s U < 1 (slightly better than Random Walk) but with **no statistically significant improvement** — DM p-values ≈ 0.5–0.6.  
+   - All ARIMA models achieved Theil’s U < 1 (slightly better than Random Walk) but with **no statistically significant improvement** , DM p-values ≈ 0.5–0.6.  
    - Concluded that the Random Walk benchmark remains unbeatable in practice.
 
 8. **Multi-Step Forecasting (1–12 months)**  
@@ -95,7 +95,7 @@ The study unfolds through several major steps:
 ### **Conclusion**
 
 This empirical investigation leads to a consistent conclusion:  
-the **real price of gasoline behaves like a random walk**, with changes driven by new, unforeseeable information — geopolitical events, supply shocks, policy shifts, and global demand fluctuations.
+the **real price of gasoline behaves like a random walk**, with changes driven by new, unforeseeable information, geopolitical events, supply shocks, policy shifts, and global demand fluctuations.
 
 Complex ARIMA structures offer minor refinements but no robust forecasting advantage.  
 In an economic sense, the gasoline market exhibits **informational efficiency**, meaning that all available historical information is already embedded in current prices.
