@@ -27,10 +27,7 @@ The study unfolds through several major steps:
 
 1. **Data Preparation and Inflation Adjustment**  
    - Imported the nominal gasoline price and CPI series.  
-   - Converted nominal prices to **real terms**:  
-     $
-     \text{Real Price}_t = \frac{\text{Nominal Price}_t}{\text{CPI}_t} \times 100
-     $
+   - Converted nominal prices to **real terms**
    - Ensured proper data types, handled decimal separators, and created time-based indexing.
 
 2. **Exploratory Visualization**  
@@ -38,13 +35,13 @@ The study unfolds through several major steps:
    - Observed how inflation smoothing reveals true price dynamics, with real prices showing long-term mean reversion and shorter cyclical spikes.
 
 3. **Logarithmic Transformation and Stationarity Analysis**  
-   - Transformed real prices into logs: $ y_t = \log(P_t^{real}) $, to stabilize variance.  
-   - Examined the **autocorrelation functions (ACFs)** of $ y_t $ and its first difference $ \Delta y_t $.  
-   - Found strong persistence in levels and weak correlation in differences — evidence that the series is **integrated of order one (I(1))**.
+   - Transformed real prices into logs to stabilize variance.  
+   - Examined the **autocorrelation functions (ACFs)** and its first difference.
+   - Found strong persistence in levels and weak correlation in differences, evidence that the series is **integrated of order one (I(1))**.
 
 4. **AR(1) Model Estimation**  
-   - Fitted **AR(1)** models for both $ y_t $ and $ \Delta y_t $.  
-   - The coefficient $ \phi \approx 0.98 $ for $ y_t $ confirmed near-unit-root behavior, while $ \phi \approx 0.45 $ for $ \Delta y_t $ showed short-term stationarity.  
+   - Fitted **AR(1)** models
+   - Observed near-unit-root behavior as well as short-term stationarity for different coefficients
    - Residual diagnostics confirmed well-behaved, mean-zero errors.
 
 5. **Forecasting Models**  
