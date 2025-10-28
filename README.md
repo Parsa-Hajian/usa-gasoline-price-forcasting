@@ -97,10 +97,4 @@ the **real price of gasoline behaves like a random walk**, with changes driven b
 Complex ARIMA structures offer minor refinements but no robust forecasting advantage.  
 In an economic sense, the gasoline market exhibits **informational efficiency**, meaning that all available historical information is already embedded in current prices.
 
-Thus, the best forecast for next month’s real gasoline price remains elegantly simple:
-
-\[
-\boxed{\hat{P}_{t+1}^{real} = P_t^{real}}
-\]
-
-In other words, today’s real price is the best guess for tomorrow’s — a reminder that, in the world of energy forecasting, the **humble Random Walk** continues to outshine its more elaborate statistical competitors.
+Today’s real price is the best guess for tomorrow’s, a reminder that, in the world of energy forecasting, the **humble Random Walk** continues to outshine its more elaborate statistical competitors.
